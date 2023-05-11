@@ -5,16 +5,24 @@
  *
  * Return: the resulting square root
  */
+int root_recurse(int n, int x);
 int _sqrt_recursion(int n)
 {
-	int root;
+	int x;
 
-	if (n < 0)
+	x = 1;
+	return (root_recurse(n, x));
+}
+
+int root_recurse(int n, int x)
+{
+	int y;
+
+	y = n / x;
+	if (x == y)
+		return (y);
+	else if (x > y)
 		return (-1);
-	if (n == 0 || n == 1)
-		return (n);	
-	root = _sqrt_recursion(n / 4) * 2;
-	if ((root + 1) * (root + 1) <= n)
-		return (root + 1);
-	return (root);
+	else
+		return (root_recurse(n, x++));
 }
