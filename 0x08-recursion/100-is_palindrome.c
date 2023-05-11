@@ -6,25 +6,22 @@
  *
  * Return: 1 if it is, 0 it's not
  */
+int pal(char *s, int i; int n);
 int is_palindrome(char *s)
 {
 	int n;
-	int i;
 
-	i = 0;
 	n = strlen(s);
-	is_palindrome((s[i], s[n - i - 1]));
+	return (pal(s, 0, n));
+}
+int pal(char *s; int i; int n)
+{
+	if (i > n / 2)
+		return (1);
+	if (s[i] != s[n - i - 1])
+		return (0);
+	else
 	{
-		if (s[i] != s[n - i - 1])
-		{
-			return (0);
-		}
-		else
-		{
-			i++
-			return (is_palindrome(s[i], s[n - i - 1]));
-		}
-		if (i > n / 2)
-			return (1);
+		return (pal(char *s, int i + 1, n));
 	}
 }

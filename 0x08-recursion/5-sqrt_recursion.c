@@ -8,10 +8,7 @@
 int root_recurse(int n, int x);
 int _sqrt_recursion(int n)
 {
-	int x;
-
-	x = 1;
-	return (root_recurse(n, x));
+	return (root_recurse(n, 1));
 }
 
 int root_recurse(int n, int x)
@@ -24,5 +21,5 @@ int root_recurse(int n, int x)
 	else if (x > y)
 		return (-1);
 	else
-		return (root_recurse(n, x++));
+		return (root_recurse(n, ++x));
 }
