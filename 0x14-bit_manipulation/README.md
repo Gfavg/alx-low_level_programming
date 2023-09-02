@@ -1,2 +1,3 @@
 0x14. C - Bit manipulation
-C
+C code
+Bitwise operations
